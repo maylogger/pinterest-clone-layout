@@ -79,12 +79,14 @@ body {
 }
 #container {
   width: 948px;
+  position: relative;
+  margin: 0 auto;
 }
 .item {
   width: 192px;
   float: left;
   padding: 15px 15px 0;
-  margin: 0 15px 15px 0;
+  margin: 0 7px 15px;
   font-size: 12px;
   background: white;
   @include box-shadow( 0 1px 3px rgba(34,25,25,0.4) );
