@@ -1,0 +1,123 @@
+@import "compass";
+@include global-reset;
+
+$bg: #faf7f7;
+$color: #8c7e7e;
+
+body {
+  background: $bg - #050505;
+  font-family: "helvetica neue", sans-serif;
+  font-size: 13px;
+  color: #444;
+  padding-top: 150px;
+}
+
+.text-shadow {
+  text-shadow: 0 1px 0 white;
+}
+
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#hd {
+  background: $bg;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  @include box-shadow(0 0 5px rgba(#000,.7));
+  .logo {
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(#000,.2);
+    h1 {
+      width: 200px;
+      height: 50px;
+      margin: 0 auto;
+    }
+    .search {
+      float: left;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .right {
+      float: right;
+      position: absolute;
+      top: 0;
+      right: 0;
+      ul {
+        font-weight: bold;
+        @extend .text-shadow;
+        li {
+          float: left;
+          padding: 15px 27px 0 14px;
+        }
+      }  
+    }
+  }
+  nav {
+    border-top: 1px solid white;
+    @extend .text-shadow;
+    padding: 10px 0;
+    ul {
+      text-align: center;
+      li {
+        display: inline;
+        margin: 0 2px;
+        &:after {
+          content: "·";
+          padding-left: 7px;
+          color: rgba(#000,.3);
+        }
+      }
+    }
+  }
+}
+#container {
+  width: 948px;
+}
+.item {
+  width: 192px;
+  float: left;
+  padding: 15px 15px 0;
+  margin: 0 15px 15px 0;
+  font-size: 12px;
+  background: white;
+  @include box-shadow( 0 1px 3px rgba(34,25,25,0.4) );
+  line-height: 1.5;
+  .comments {
+    color: $color;
+    padding-bottom: 15px;
+  }
+  .chat {
+    background: #f2f0f0;
+    margin: 0 -15px;
+  }
+  .chatbox {
+    border-top: 1px solid white;
+    border-bottom: 1px solid rgba(#000,.1);
+    padding: 15px 15px;
+    padding-left: 50px;
+    @include pie-clearfix;
+    &:last-child {
+      border-bottom: none;
+    }
+    &:first-child {
+      color: #b29c9c;
+      b {
+        color: #8c7e7e;
+      }
+    }
+    img {
+      margin-left: -35px;
+      float: left;
+    }
+    b {
+      font-weight: bold;
+    }
+  }
+}

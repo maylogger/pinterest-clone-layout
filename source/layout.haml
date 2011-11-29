@@ -1,0 +1,13 @@
+!!! 5
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    = stylesheet_link_tag 'main'
+    = javascript_include_tag( "https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js", "all" )
+    = yield_content :head
+  %body{:class => page_classes}
+    %header#hd
+      = yield_content :header
+    .wrapper
+      #bd
+        = yield

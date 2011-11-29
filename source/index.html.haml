@@ -1,0 +1,44 @@
+- content_for :head do
+  %title Pinterest clone home
+
+- content_for :header do
+  .logo
+    .wrapper
+      %h1= image_tag( lorem.image("200x50", :text => "Pinterest"), :alt => "" )
+      .search
+        = image_tag( lorem.image("200x50", :text => "Search box"), :alt => "" )
+      .right
+        %ul
+          %li About
+          %li Login
+  %nav
+    .top-menu
+      %ul
+        %li Everything
+        %li Videos
+        %li Discussions
+        %li Gifts
+
+#container
+  - 100.times do
+    .item
+      - @imgheight = ( rand(10) * 20 + 100 ).to_s
+      = image_tag( lorem.image( "192x" + @imgheight ), :alt => "", :height => @imgheight )
+      %h2= lorem.sentence
+      .comments
+        = 1 + rand(10)
+        comments
+      .chat
+        .chatbox
+          = image_tag( lorem.image("30x30"), :alt => "" )
+          %b= lorem.name
+          via
+          %b= lorem.name
+          onto
+          %b= lorem.words rand(3) + 1
+        - @chat = rand(3)
+        - @chat.times do
+          .chatbox
+            = image_tag( lorem.image("30x30"), :alt => "" )
+            %b= lorem.name
+            %p= lorem.sentence
