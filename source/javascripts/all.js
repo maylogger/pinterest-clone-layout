@@ -1,4 +1,3 @@
-//= require_tree .
 
 $(function(){
   $('#container').masonry({

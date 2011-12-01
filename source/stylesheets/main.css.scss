@@ -1,5 +1,7 @@
+@import "flickrbomb";
 @import "compass";
 @include global-reset;
+
 
 $bg: #faf7f7;
 $color: #8c7e7e;
@@ -49,14 +51,14 @@ body {
       position: absolute;
       top: 0;
       right: 0;
-      ul {
-        font-weight: bold;
-        @extend .text-shadow;
-        li {
-          float: left;
-          padding: 15px 27px 0 14px;
-        }
-      }  
+    }
+    ul {
+      font-weight: bold;
+      @extend .text-shadow;
+      li {
+        float: left;
+        padding: 15px 27px 0 14px;
+      }
     }
   }
   nav {
@@ -91,6 +93,9 @@ body {
   background: white;
   @include box-shadow( 0 1px 3px rgba(34,25,25,0.4) );
   line-height: 1.5;
+  h2 {
+    padding-top: 5px;
+  }
   .comments {
     color: $color;
     padding-bottom: 15px;

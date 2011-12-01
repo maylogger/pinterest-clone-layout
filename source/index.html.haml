@@ -4,9 +4,10 @@
 - content_for :header do
   .logo
     .wrapper
-      %h1= image_tag( lorem.image("200x50", :text => "Pinterest"), :alt => "" )
+      %h1= image_tag( lorem.image("200x50", :text => "L O G O"), :alt => "" )
       .search
-        = image_tag( lorem.image("200x50", :text => "Search box"), :alt => "" )
+        %ul
+          %li Search
       .right
         %ul
           %li About
@@ -22,8 +23,8 @@
 #container
   - 100.times do
     .item
-      - @imgheight = ( rand(10) * 20 + 100 ).to_s
-      = image_tag( lorem.image( "192x" + @imgheight ), :alt => "", :height => @imgheight )
+      - @imgheight = ( rand(20) * 10 + 150 ).to_s + "px"
+      = image_tag( "flickr://" + (lorem.first_name) , :alt => "",:width => "192px", :height => @imgheight, :class => "photo" )
       %h2= lorem.sentence
       .comments
         = 1 + rand(10)
@@ -42,3 +43,5 @@
             = image_tag( lorem.image("30x30"), :alt => "" )
             %b= lorem.name
             %p= lorem.sentence
+
+= javascript_include_tag( "jquery.flickrbomb.min.js" )
