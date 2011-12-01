@@ -24,14 +24,14 @@
   - 100.times do
     .item
       - @imgheight = ( rand(20) * 10 + 150 ).to_s + "px"
-      = image_tag( "flickr://" + (lorem.first_name) , :alt => "",:width => "192px", :height => @imgheight, :class => "photo" )
+      = image_tag( "flickr://" + (lorem.first_name) , :alt => "",:width => "192px", :height => @imgheight )
       %h2= lorem.sentence
       .comments
         = 1 + rand(10)
         comments
       .chat
         .chatbox
-          = image_tag( lorem.image("30x30"), :alt => "" )
+          = image_tag( "flickr://" + (lorem.first_name) , :alt => "",:width => "30px", :height => "30px" )
           %b= lorem.name
           via
           %b= lorem.name
@@ -40,7 +40,7 @@
         - @chat = rand(3)
         - @chat.times do
           .chatbox
-            = image_tag( lorem.image("30x30"), :alt => "" )
+            = image_tag( "flickr://" + (lorem.first_name) , :alt => "",:width => "30px", :height => "30px" )
             %b= lorem.name
             %p= lorem.sentence
 
