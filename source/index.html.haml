@@ -21,11 +21,13 @@
         %li Gifts
 
 #container
-  - 100.times do
+  - doc = Net::HTTP.get_response("more.handlino.com","/sentences.json?n=100")
+  - @moretext = JSON.parse(doc.body)
+  - 100.times do |num|
     .item
       - @imgheight = ( rand(20) * 10 + 150 ).to_s + "px"
       = image_tag( "flickr://" + (lorem.first_name) , :alt => "",:width => "192px", :height => @imgheight )
-      %h2= lorem.sentence
+      %h2= @moretext["sentences"][num]
       .comments
         = 1 + rand(10)
         comments
