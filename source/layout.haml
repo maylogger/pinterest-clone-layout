@@ -7,7 +7,7 @@
     %meta{:content => "Mockup by evendesign http://evendesign.tw", :property => "og:description"}
     %meta{:content => "http://pinterest-clone.heroku.com/images/fb.png", :property => "og:image"}
     %meta{:content => "http://pinterest-clone.heroku.com/", :property => "og:url"}
-    = stylesheet_link_tag 'main'
+    = stylesheet_link_tag( "main" )
     = javascript_include_tag( "https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js", "jquery.masonry.min.js", "all" )
     = yield_content :head
   %body{:class => page_classes}

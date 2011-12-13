@@ -21,19 +21,17 @@
         %li Gifts
 
 #container
-  - doc = Net::HTTP.get_response("more.handlino.com","/sentences.json?n=100")
-  - @moretext = JSON.parse(doc.body)
-  - 100.times do |num|
+  - 50.times do |num|
     .item
       - @imgheight = ( rand(20) * 10 + 150 ).to_s + "px"
-      = image_tag( "flickr://" + (lorem.first_name) , :alt => "",:width => "192px", :height => @imgheight )
-      %h2= @moretext["sentences"][num]
+      = image_tag( lorem.image("192x" + @imgheight ) , :alt => "",:width => "192px", :height => @imgheight )
+      %h2.lipsum
       .comments
         = 1 + rand(10)
         comments
       .chat
         .chatbox
-          = image_tag( "flickr://" + (lorem.first_name) , :alt => "",:width => "30px", :height => "30px" )
+          = image_tag( lorem.image( "30x30" ) , :alt => "",:width => "30px", :height => "30px" )
           %b= lorem.name
           via
           %b= lorem.name
@@ -42,8 +40,6 @@
         - @chat = rand(3)
         - @chat.times do
           .chatbox
-            = image_tag( "flickr://" + (lorem.first_name) , :alt => "",:width => "30px", :height => "30px" )
+            = image_tag( lorem.image( "30x30" ) , :alt => "",:width => "30px", :height => "30px" )
             %b= lorem.name
             %p= lorem.sentence
-
-= javascript_include_tag( "jquery.flickrbomb.min.js" )
