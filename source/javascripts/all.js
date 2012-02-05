@@ -1,7 +1,7 @@
 function initLayout(){
   var window_width = $(window).width();
   if ( window_width > 960 ) {
-    wrapper_width = Math.floor( window_width / 240 ) * 240;
+    wrapper_width = Math.floor( window_width / 236 ) * 236;
     $('.wrapper').css("width", wrapper_width + "px" );
   }
 }
