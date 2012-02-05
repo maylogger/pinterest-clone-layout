@@ -1,45 +1,45 @@
 - content_for :head do
-  %title Pinterest clone html mockup
+  %title Pinterest clone html mockup (designed by rocodev)
 
 - content_for :header do
   .logo
     .wrapper
-      %h1= image_tag( lorem.image("200x50", :text => "L O G O"), :alt => "" )
-      .search
-        %ul
-          %li Search
+      %h1= link_to( "Pinterest Clone Layout", "#" )
       .right
         %ul
           %li About
-          %li Login
+          %li
+            = link_to( "RocoDev", "http://rocodev.com" )
   %nav
-    .top-menu
-      %ul
-        %li Everything
-        %li Videos
-        %li Discussions
-        %li Gifts
+    .wrapper
+      .top-menu
+        %ul
+          %li Everything
+          %li Videos
+          %li Discussions
+          %li Gifts
 
-#container
-  - 50.times do |num|
-    .item
-      - @imgheight = ( rand(20) * 10 + 150 ).to_s + "px"
-      = image_tag( lorem.image("192x" + @imgheight ) , :alt => "",:width => "192px", :height => @imgheight )
-      %h2.lipsum
-      .comments
-        = 1 + rand(10)
-        comments
-      .chat
-        .chatbox
-          = image_tag( lorem.image( "30x30" ) , :alt => "",:width => "30px", :height => "30px" )
-          %b= lorem.name
-          via
-          %b= lorem.name
-          onto
-          %b= lorem.words rand(3) + 1
-        - @chat = rand(3)
-        - @chat.times do
+.wrapper
+  #masonry
+    - 100.times do |num|
+      .item
+        - @imgheight = ( rand(20) * 10 + 150 ).to_s + "px"
+        = image_tag( lorem.image("192x" + @imgheight , :text => lorem.word, :random_color => "true" ) , :alt => "",:width => "192px", :height => @imgheight )
+        %h2.lipsum
+        .comments
+          = 1 + rand(10)
+          comments
+        .chat
           .chatbox
-            = image_tag( lorem.image( "30x30" ) , :alt => "",:width => "30px", :height => "30px" )
+            = image_tag( lorem.image( "30x30" , :text => lorem.word, :random_color => "true" ) , :alt => "",:width => "30px", :height => "30px" )
             %b= lorem.name
-            %p= lorem.sentence
+            via
+            %b= lorem.name
+            onto
+            %b= lorem.words rand(3) + 1
+          - @chat = rand(3)
+          - @chat.times do
+            .chatbox
+              = image_tag( lorem.image( "30x30" , :text => lorem.word, :random_color => "true" ) , :alt => "",:width => "30px", :height => "30px" )
+              %b= lorem.name
+              %p= lorem.sentence

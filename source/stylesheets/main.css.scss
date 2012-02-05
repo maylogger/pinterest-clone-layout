@@ -13,6 +13,10 @@ body {
   padding-top: 150px;
 }
 
+a {
+  @include link-colors(#369);
+}
+
 .text-shadow {
   text-shadow: 0 1px 0 white;
 }
@@ -35,15 +39,19 @@ body {
     padding: 7px 0;
     border-bottom: 1px solid rgba(#000,.2);
     h1 {
-      width: 200px;
+      color: DarkRed;
+      width: 400px;
       height: 50px;
       margin: 0 auto;
-    }
-    .search {
-      float: left;
-      position: absolute;
-      top: 0;
-      left: 0;
+      text-align: center;
+      font-size: 26px;
+      line-height: 50px;
+      font-family: georgia, serif;
+      font-style: italic;
+      a {
+        @include link-colors(DarkRed);
+        @include unstyled-link;
+      }
     }
     .right {
       float: right;
@@ -73,6 +81,9 @@ body {
           content: "·";
           padding-left: 7px;
           color: rgba(#000,.3);
+        }
+        &:last-child:after {
+          content: none;
         }
       }
     }
