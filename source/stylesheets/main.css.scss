@@ -44,13 +44,16 @@ a {
       height: 50px;
       margin: 0 auto;
       text-align: center;
-      font-size: 26px;
+      font-size: 20px;
       line-height: 50px;
-      font-family: georgia, serif;
+      font-family: "Zapfino", "Lucida Handwriting", georgia, serif;
       font-style: italic;
       a {
+        position: relative;
+        top: 10px;
         @include link-colors(DarkRed);
         @include unstyled-link;
+        text-shadow: 0 1px 0 white, 0 5px 10px rgba(#000, .125);
       }
     }
     .right {
